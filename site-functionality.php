@@ -46,33 +46,14 @@ const VERSION = '1.0.0';
 function site_functionality_init() {
 	load_plugin_textdomain( 'site-functionality', false, SITE_CORE_DIR . '/languages' );
 
-	// include_once SITE_CORE_DIR . '/src/helpers.php';
-	// include_once SITE_CORE_DIR . '/src/filters.php';
-	// include_once SITE_CORE_DIR . '/src/security.php';
-	// include_once SITE_CORE_DIR . '/src/util/util.php';
-
-	// // include_once( SITE_CORE_DIR . '/src/api/graphql.php' 				);
-
-	// include_once SITE_CORE_DIR . '/src/abstracts/class-base.php';
-	// include_once SITE_CORE_DIR . '/blocks/blocks.php';
-
-	// include_once SITE_CORE_DIR . '/src/admin/admin.php';
-
-	// include_once SITE_CORE_DIR . '/src/class-template-loader.php';
-	// include_once SITE_CORE_DIR . '/src/abstracts/class-post-type.php';
-	// include_once SITE_CORE_DIR . '/src/abstracts/class-taxonomy.php';
-
-	// include_once SITE_CORE_DIR . '/src/api/class-rest-api.php';
-	// include_once SITE_CORE_DIR . '/src/post-types/class-post-types.php';
-	// include_once SITE_CORE_DIR . '/src/taxonomies/class-taxonomies.php';
-	// include_once SITE_CORE_DIR . '/src/custom-fields/class-custom-fields.php';
-
-	// include_once SITE_CORE_DIR . '/src/integration/contact-form-7/contact-form-7.php';
+	include_once SITE_CORE_DIR . '/src/Abstracts/Base.php';
+	include_once SITE_CORE_DIR . '/src/Abstracts/PostType.php';
+	include_once SITE_CORE_DIR . '/src/Abstracts/Taxonomy.php';
 
 	$admin = new Admin( VERSION, PLUGIN );
 	$restAPI = new RestApi( VERSION, PLUGIN );
-	$postTypes    = new PostTypes( VERSION, PLUGIN );
 	$taxonomies   = new Taxonomies( VERSION, PLUGIN );
+	$postTypes    = new PostTypes( VERSION, PLUGIN );
 	$customFields = new CustomFields( VERSION, PLUGIN );
 	$util = new Util( VERSION, PLUGIN );
 }
