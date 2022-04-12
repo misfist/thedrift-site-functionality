@@ -8,6 +8,7 @@
 namespace SiteFunctionality\Taxonomies;
 
 use SiteFunctionality\Abstracts\Base;
+use SiteFunctionality\Taxonomies\Author;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -31,6 +32,8 @@ class Taxonomies extends Base {
 	 *
 	 * @return void
 	 */
-	public function init() {}
+	public function init() {
+		new Author( $this->version, $this->plugin_name );
+	}
 
 }

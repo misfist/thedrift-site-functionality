@@ -52,6 +52,7 @@ abstract class Taxonomy extends Base {
 	 *
 	 * @since 0.1.0
 	 */
+
 	public function register() {
 
 		$labels = array(
@@ -84,7 +85,7 @@ abstract class Taxonomy extends Base {
 
 		$args = array(
 			'labels'            => $labels,
-			'hierarchical'      => false,
+			'hierarchical'      => $this::TAXONOMY['hierarchical'],
 			'public'            => true,
 			'show_ui'           => true,
 			'show_admin_column' => true,
